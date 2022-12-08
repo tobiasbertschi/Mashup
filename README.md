@@ -2,6 +2,6 @@
 
 ## Idee
 
-APIs = Cats API, Wetter API & Random Facts
+APIs = Cats API, Wetter API, Random Facts & Horoscope
 
-Man soll nach Ortschaften in der Schweiz suchen können und bekommt dazu das Wetter, ein zufälliger Fakt und ein süsses Katzenbild.
+Die Webseite für das Tägliche Wetter, Coole Fakten und ein süsses Katzenbild dazu noch einige Fakten aus dem Horoskop.
