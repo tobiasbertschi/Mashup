@@ -3,6 +3,10 @@ import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
 
 export default function Mainpage() {
+
+    
+
+
   return (
     <div className="App">
       <header className="App-header">
