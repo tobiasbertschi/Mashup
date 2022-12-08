@@ -2,7 +2,6 @@
 
 ## Idee
 
-APIs = WM API, Wetter API
+APIs = Cats API, Wetter API & Random Facts
 
-Man soll eine Liste von Public Viewings für WM Spiele aufgelistet werden.
-Zusätzlich soll zu diesen Public Viewings auch noch das Wetter für diese aufgelistet werden, damit man sieht wie das Wetter an diesem Ort ist.
+Man soll nach Ortschaften in der Schweiz suchen können und bekommt dazu das Wetter, ein zufälliger Fakt und ein süsses Katzenbild.
