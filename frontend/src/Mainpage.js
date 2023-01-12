@@ -11,6 +11,7 @@ export default function Mainpage() {
   const [weather, setWeather] = useState()
   const [cat, setCat] = useState()
   const [horoscope, setHoroscope] = useState()
+  const [catsrc, setCatsrc] = useState()
 
 
   async function fetchFact() {
@@ -24,9 +25,10 @@ export default function Mainpage() {
       .then(data => setWeather(data));
   }
   async function fetchCat() {
-    const response = await fetch('http://localhost:8080/cats')
+    const response = await fetch('https://cataas.com/cat/gif')
       .then(res => res)
-      .then(data => setCat(data.blob()));
+      .then(data => data.blob())
+      .then(blob => setCatsrc(blob));
   }
 
   async function fetchHoroscope() {
@@ -42,49 +44,33 @@ export default function Mainpage() {
     fetchHoroscope()
   }, []);
 
-  async function makeimage(){
-    console.log(cat.data)
-    const img = new Image()
-    img.src = URL.createObjectURL(cat)
-    // newer promise based version of img.onload
-    await img.decode()
-    
-    document.body.append(img)
-  
-
-  }
-
-
-  useEffect(() => {
-    console.log(cat)
-    makeimage()
-  }, [cat]);
-
-
-
 
   return (
     <div className="App">
       <header className="App-header">
         <Grid container direction="column" justifyContent="center" alignItems="strech">
           <Grid container direction="row" alignItems="center">
-            <Grid xs={12} className="weather">
+            <Grid xs={6} className="weather">
               <h2>Weather</h2>
-              <h2>{weather?.main?.temp - 273}</h2>
-              <h2>{weather?.name}</h2>
-              <h2>{weather?.weather[0]?.main}</h2>
-              <h2>{weather?.wind?.speed}</h2>
-              <h2>{weather?.wind?.deg}</h2>
-            </Grid>
-          </Grid>
-          <Grid container direction="row" alignItems="center">
-            <Grid xs={6}>
-              <h2>Facts</h2>
-              <h2> {joke}</h2>
+              <h2>{Math.round(weather?.main?.temp - 273)}°C</h2>
+              <h2>Location: {weather?.name}</h2>
+              <h2>Current Weather: {weather?.weather[0]?.main}</h2>
+              <h2>Wind: {Math.round(weather?.wind?.speed)}km/h</h2>
             </Grid>
             <Grid xs={6}>
               <h2>Cat</h2>
+              {catsrc !== undefined
+              ? <img id="image" src={URL.createObjectURL(catsrc)} width="200" height="200"/>
+              :<></>}
             </Grid>
+          </Grid>
+          
+          <Grid container direction="row" alignItems="center">
+            <Grid xs={12}>
+              <h2>Facts</h2>
+              <h2> {joke}</h2>
+            </Grid>
+           
           </Grid>
           <Grid xs={12}  className="horoscope">
             <h2>Horoscope</h2>
