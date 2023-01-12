@@ -1,10 +1,17 @@
 .App {
   text-align: center;
+
 }
 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+}
+
+body{
+  background: rgb(129,28,58);
+  background: linear-gradient(10deg, rgba(129,28,58,1) 0%, rgba(0,116,246,1) 89%);
+  color: white;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -18,7 +25,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: calc(10px + 2vmin);
+  font-size: calc(8px + 1.2vmin);
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+
+
 }
 
 .App-link {
@@ -32,4 +42,9 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.horoscope {
+  background-image: url("https://static.vecteezy.com/system/resources/previews/004/896/848/large_2x/zodiac-wheel-with-galaxy-stars-background-astrology-horoscope-with-signs-aries-taurus-gemini-cancer-leo-virgo-libra-scorpio-sagittarius-capricorn-aquarius-pisces-symbols-free-vector.jpg");
+  color: rgb(255, 255, 255);
 }
